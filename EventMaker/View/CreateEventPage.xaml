@@ -1,0 +1,22 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EventMaker.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:EventMaker.ViewModel"
+    x:Class="EventMaker.View.CreateEventPage"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <ViewModel:EventViewModel/>
+    </Page.DataContext>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="98,141,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="44" Width="170"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="98,190,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="53" Width="170"/>
+        <DatePicker HorizontalAlignment="Left" Margin="98,349,0,0" VerticalAlignment="Top" DataContext="{Binding Date, Mode=TwoWay}"/>
+        <TimePicker HorizontalAlignment="Left" Margin="98,440,0,0" VerticalAlignment="Top" Height="40" Width="296" DataContext="{Binding Time, Mode=TwoWay}"/>
+
+    </Grid>
+</Page>
