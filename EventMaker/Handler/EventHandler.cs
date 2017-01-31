@@ -20,11 +20,15 @@ namespace EventMaker.Handler
 
         public void CreateEvent()
         {
-            Event newEvent = new Event {DateTime = DateTimeConverter.DateTimeOffseDateTimeSeDateTime(EventViewModel.Date, EventViewModel.Time),
-                Description = EventViewModel.Description,
-                Id = EventViewModel.Id,
-                Name = EventViewModel.Name,
-                Place = EventViewModel.Place};
+
+            Event newEvent = new Event
+            (
+                EventViewModel.Id,
+                EventViewModel.Name,
+                EventViewModel.Description,
+                EventViewModel.Place,
+                DateTimeConverter.DateTimeOffseDateTimeSeDateTime(EventViewModel.Date, EventViewModel.Time)
+            );
         }
     }
 }

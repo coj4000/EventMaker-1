@@ -13,10 +13,10 @@ namespace EventMaker.Model
 
         public EventCatalogSingleton()
         {
-            Event event1 = new Event();
-            Event event2 = new Event();
-            Event event3 = new Event(); 
-
+            Event event1 = new Event(1,"Møde","Her er der tekst","Her", new DateTime(2017,5,5));
+            //Event event2 = new Event();
+            //Event event3 = new Event(); 
+            eventcollection = new ObservableCollection<Event>();
         }
 
         public void AddEvent(Event e)

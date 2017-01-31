@@ -45,9 +45,13 @@ namespace EventMaker.Model
             set { dateTime = value; }
         }
 
-        public Event()
+        public Event(int id,string name,string description,string place,DateTime datetime)
         {
-            
+            this.Id = id;
+            this.Name = name;
+            this.Description = description;
+            this.Place = place;
+            this.DateTime = datetime;
         }
 
         public override string ToString()
