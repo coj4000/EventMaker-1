@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="367d9576-35a7-4d5c-bfbf-5607e8afb566"
+  name="SSD" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction
+        Id="1ed188ab-f872-4ede-a581-f3b7be53ccc3"
+        name="Sequence1"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="b776d859-0f86-45c3-a989-59d4705bbe98"
+            name="BehaviorExecutionSpecification4">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="161e3fd0-d76c-48c3-8183-a75eb8dcd1e7"
+                LastKnownName="EventMaker"
+                LastKnownLocation="SSD.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="da942384-8f60-4de9-8e1a-b5043174a9cb"
+                LastKnownName="ExecutionOccurrenceSpecification8"
+                LastKnownLocation="SSD.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="9dcda5e2-4548-4337-b560-66b884cc6152"
+                LastKnownName="ExecutionOccurrenceSpecification7"
+                LastKnownLocation="SSD.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="8933d170-160d-4bab-aa8e-e969bca5c148"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="SSD.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="aeb40f90-8139-4a90-b1d3-1502dce94dc9"
+                LastKnownName="MessageOccurrenceSpecification14"
+                LastKnownLocation="SSD.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="9dcda5e2-4548-4337-b560-66b884cc6152"
+            name="ExecutionOccurrenceSpecification7">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="ab1d88a3-96d7-443c-b329-62c81d750fe5"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="SSD.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="161e3fd0-d76c-48c3-8183-a75eb8dcd1e7"
+                LastKnownName="EventMaker"
+                LastKnownLocation="SSD.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <lostFoundTarget
+            Id="8cc55cb9-e3af-418f-82bf-7226a5523d25"
+            name="LostFoundTarget2" />
+          <messageOccurrenceSpecification
+            Id="8933d170-160d-4bab-aa8e-e969bca5c148"
+            name="MessageOccurrenceSpecification6">
+            <covered>
+              <lifelineMoniker
+                Id="161e3fd0-d76c-48c3-8183-a75eb8dcd1e7"
+                LastKnownName="EventMaker"
+                LastKnownLocation="SSD.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="aeb40f90-8139-4a90-b1d3-1502dce94dc9"
+            name="MessageOccurrenceSpecification14">
+            <covered>
+              <lifelineMoniker
+                Id="161e3fd0-d76c-48c3-8183-a75eb8dcd1e7"
+                LastKnownName="EventMaker"
+                LastKnownLocation="SSD.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <lostFoundTarget
+            Id="a8282e16-dc4a-4242-85bd-694088a56d45"
+            name="LostFoundTarget8" />
+          <executionOccurrenceSpecification
+            Id="da942384-8f60-4de9-8e1a-b5043174a9cb"
+            name="ExecutionOccurrenceSpecification8">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="6c83d07e-82c5-4710-9473-521dc67c274d"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="SSD.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="161e3fd0-d76c-48c3-8183-a75eb8dcd1e7"
+                LastKnownName="EventMaker"
+                LastKnownLocation="SSD.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="2a0e5ccd-ead9-4b3c-83f2-5d3cb6c6ed0e"
+            name="BehaviorExecutionSpecification6">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="161e3fd0-d76c-48c3-8183-a75eb8dcd1e7"
+                LastKnownName="EventMaker"
+                LastKnownLocation="SSD.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="7f2b0b20-6267-4d8e-a996-e95e11788c0d"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="SSD.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="dfb03ebc-610d-4d7e-a37b-207d51029107"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="SSD.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="9e1dd508-dc41-41ee-86e3-776de61d8b3d"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="SSD.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="a2b8c852-cba1-4bac-a43c-513c024c8169"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="SSD.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="dfb03ebc-610d-4d7e-a37b-207d51029107"
+            name="ExecutionOccurrenceSpecification11">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="461b926b-bc8c-4453-a1da-b79990c3bb92"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="SSD.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="161e3fd0-d76c-48c3-8183-a75eb8dcd1e7"
+                LastKnownName="EventMaker"
+                LastKnownLocation="SSD.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <lostFoundTarget
+            Id="a3c348d4-eade-4588-bd53-a7afd1417015"
+            name="LostFoundTarget4" />
+          <messageOccurrenceSpecification
+            Id="9e1dd508-dc41-41ee-86e3-776de61d8b3d"
+            name="MessageOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="161e3fd0-d76c-48c3-8183-a75eb8dcd1e7"
+                LastKnownName="EventMaker"
+                LastKnownLocation="SSD.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a2b8c852-cba1-4bac-a43c-513c024c8169"
+            name="MessageOccurrenceSpecification11">
+            <covered>
+              <lifelineMoniker
+                Id="161e3fd0-d76c-48c3-8183-a75eb8dcd1e7"
+                LastKnownName="EventMaker"
+                LastKnownLocation="SSD.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <lostFoundTarget
+            Id="914e5d8d-f57d-49ab-b5e2-8771fd31da1b"
+            name="LostFoundTarget5" />
+          <executionOccurrenceSpecification
+            Id="7f2b0b20-6267-4d8e-a996-e95e11788c0d"
+            name="ExecutionOccurrenceSpecification12">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="ebb269b2-897b-4335-b046-19aca1046eeb"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="SSD.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="161e3fd0-d76c-48c3-8183-a75eb8dcd1e7"
+                LastKnownName="EventMaker"
+                LastKnownLocation="SSD.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="161e3fd0-d76c-48c3-8183-a75eb8dcd1e7"
+            name="EventMaker"
+            isActor="false"
+            lifelineDisplayName="EventMaker">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="9dcda5e2-4548-4337-b560-66b884cc6152"
+                LastKnownName="ExecutionOccurrenceSpecification7"
+                LastKnownLocation="SSD.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="da942384-8f60-4de9-8e1a-b5043174a9cb"
+                LastKnownName="ExecutionOccurrenceSpecification8"
+                LastKnownLocation="SSD.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="dfb03ebc-610d-4d7e-a37b-207d51029107"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="SSD.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="7f2b0b20-6267-4d8e-a996-e95e11788c0d"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="SSD.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="d7cd9321-9539-4adf-ac1b-5076972c831a"
+            name="Add Event"
+            messageKind="Found"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <lostFoundTargetMoniker
+                Id="8cc55cb9-e3af-418f-82bf-7226a5523d25"
+                LastKnownName="LostFoundTarget2"
+                LastKnownLocation="SSD.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="8933d170-160d-4bab-aa8e-e969bca5c148"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="SSD.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="0bc72536-b6f9-40d2-a0bd-6ecb4db74a89"
+            name="Updated EventPage"
+            messageKind="Lost"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="aeb40f90-8139-4a90-b1d3-1502dce94dc9"
+                LastKnownName="MessageOccurrenceSpecification14"
+                LastKnownLocation="SSD.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <lostFoundTargetMoniker
+                Id="a8282e16-dc4a-4242-85bd-694088a56d45"
+                LastKnownName="LostFoundTarget8"
+                LastKnownLocation="SSD.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="90eeba26-8999-4515-a97e-0b00ee3c439d"
+            name="Delete Event"
+            messageKind="Found"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <lostFoundTargetMoniker
+                Id="a3c348d4-eade-4588-bd53-a7afd1417015"
+                LastKnownName="LostFoundTarget4"
+                LastKnownLocation="SSD.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="9e1dd508-dc41-41ee-86e3-776de61d8b3d"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="SSD.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="74de85e7-ac99-43c7-9a27-e0fe42070063"
+            name="Updated EventPage"
+            messageKind="Lost"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="a2b8c852-cba1-4bac-a43c-513c024c8169"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="SSD.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <lostFoundTargetMoniker
+                Id="914e5d8d-f57d-49ab-b5e2-8771fd31da1b"
+                LastKnownName="LostFoundTarget5"
+                LastKnownLocation="SSD.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="ab1d88a3-96d7-443c-b329-62c81d750fe5"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="6c83d07e-82c5-4710-9473-521dc67c274d"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="461b926b-bc8c-4453-a1da-b79990c3bb92"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="ebb269b2-897b-4335-b046-19aca1046eeb"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

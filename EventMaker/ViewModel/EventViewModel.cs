@@ -67,6 +67,7 @@ namespace EventMaker.ViewModel
         }
 
 
+
         public EventViewModel()
         {
             DateTime dt = System.DateTime.Now;
