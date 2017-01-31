@@ -11,11 +11,25 @@ namespace EventMaker.Model
     {
         public ObservableCollection<Event> eventcollection = new ObservableCollection<Event>();
 
-        public EventCatalogSingleton()
+        private static EventCatalogSingleton instance;
+
+        public static EventCatalogSingleton Instance
         {
-            Event event1 = new Event(1,"Møde","Her er der tekst","Her", new DateTime(2017,5,5));
-            //Event event2 = new Event();
-            //Event event3 = new Event(); 
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new EventCatalogSingleton();
+                }
+
+                return instance;
+            }
+        }
+
+        private EventCatalogSingleton()
+        {
+            Event event1 = new Event(1, "Møde", "Her er der tekst", "Her", new DateTime(2017, 5, 5));
+
             eventcollection = new ObservableCollection<Event>();
         }
 

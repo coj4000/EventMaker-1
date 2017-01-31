@@ -29,6 +29,8 @@ namespace EventMaker.Handler
                 EventViewModel.Place,
                 DateTimeConverter.DateTimeOffseDateTimeSeDateTime(EventViewModel.Date, EventViewModel.Time)
             );
+
+            EventViewModel.EventCatalogSingleton.AddEvent(newEvent);
         }
     }
 }
