@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EventMaker.Converter;
 using EventMaker.Model;
 
 namespace EventMaker.ViewModel
@@ -65,11 +66,14 @@ namespace EventMaker.ViewModel
             set { _time = value; }
         }
 
+
         public EventViewModel()
         {
             DateTime dt = System.DateTime.Now;
             _date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0,0,0,0, new TimeSpan());
             _time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
+
+
         }
 
     }
