@@ -7,7 +7,8 @@ using EventMaker.Converter;
 using EventMaker.Model;
 using EventMaker.Common;
 using System.ComponentModel;
-using eh=EventMaker.Handler;
+using eh = EventMaker.Handler;
+using System.Windows.Input;
 
 namespace EventMaker.ViewModel
 {
@@ -71,7 +72,7 @@ namespace EventMaker.ViewModel
             set { _time = value; }
         }
 
-        public RelayCommand CreateEventCommand { get; set; }
+        public ICommand CreateEventCommand { get; set; }
 
         public eh.EventHandler evHandler { get; set; }
 

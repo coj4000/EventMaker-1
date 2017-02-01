@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ViewModel="using:EventMaker.ViewModel"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity" xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
     x:Class="EventMaker.View.CreateEventPage"
     mc:Ignorable="d">
 
@@ -17,6 +18,13 @@
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="98,190,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="53" Width="170"/>
         <DatePicker HorizontalAlignment="Left" Margin="98,349,0,0" VerticalAlignment="Top" DataContext="{Binding Date, Mode=TwoWay}"/>
         <TimePicker HorizontalAlignment="Left" Margin="98,440,0,0" VerticalAlignment="Top" Height="40" Width="296" DataContext="{Binding Time, Mode=TwoWay}"/>
+        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="98,542,0,0" VerticalAlignment="Top" Width="125" Command="{Binding CreateEventCommand}">
+            <Interactivity:Interaction.Behaviors>
+                <Core:EventTriggerBehavior EventName="Click">
+                    <Core:NavigateToPageAction TargetPage="EventMaker.View.EventPage"/>
+                </Core:EventTriggerBehavior>
+            </Interactivity:Interaction.Behaviors>
+        </AppBarButton>
 
     </Grid>
 </Page>
