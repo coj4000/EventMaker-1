@@ -30,6 +30,8 @@ namespace EventMaker.Handler
             );
 
             EventViewModel.EventCatalogSingleton.AddEvent(newEvent);
+
+            
         }
     }
 }

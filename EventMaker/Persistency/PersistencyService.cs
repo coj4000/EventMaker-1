@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,29 @@ namespace EventMaker.Persistency
         {
             StorageFile localFile = await ApplicationData.Current.LocalFolder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
             await FileIO.WriteTextAsync(localFile, eventsString);
+        }
+
+        public static async Task<List<Event>> LoadEventsFromJsonAsync()
+        {
+            string eventsJsonString = await DeSerializeEventsFileAsync(eventFileName);
+            if (eventsJsonString != null)
+                return (List<Event>)JsonConvert.DeserializeObject(eventsJsonString, typeof(List<Event>));
+            return null;
+        }
+
+        public static async Task<string> DeSerializeEventsFileAsync(String fileName)
+        {
+            try
+            {
+                StorageFile localFile = await ApplicationData.Current.LocalFolder.GetFileAsync(fileName);
+                return await FileIO.ReadTextAsync(localFile);
+            }
+            catch (FileNotFoundException ex)
+            {
+
+               // MessageDialogHelper.Show("File of Events not found! - Loading for the first time? \n File not found!", ex.Message);
+                return null;
+            }
         }
         /*
         public static async Task<List<Event>> LoadEventsFromJsonAsync()
