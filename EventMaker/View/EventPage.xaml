@@ -17,7 +17,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ListView x:Name="listView" HorizontalAlignment="Left" Height="751" Margin="91,78,0,0" VerticalAlignment="Top" Width="410" ItemsSource="{Binding EventCatalogSingleton, Mode=TwoWay}"/>
-        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="Ny Event" Margin="704,796,0,0" VerticalAlignment="Top" Width="309" Height="172" FontSize="30" Background="#FF5E834F">
+        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="Ny Event" Margin="545,585,0,0" VerticalAlignment="Top" Width="309" Height="172" FontSize="30" Background="#FF5E834F">
             <Interactivity:Interaction.Behaviors>
                 <Core:EventTriggerBehavior EventName="Click">
                     <Core:NavigateToPageAction TargetPage="EventMaker.View.CreateEventPage"/>
