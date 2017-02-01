@@ -80,8 +80,13 @@ namespace EventMaker.ViewModel
             DateTime dt = System.DateTime.Now;
             _date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             _time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
+
+            //this betyder at man referere til DENNE Viewmodel. Altså, den viewmodel der bliver
+            //lavet er den der bliver sendt med.
             evHandler = new Handler.EventHandler(this);
 
+            //når man sender en delegate med (CreateEvent) skal man ikke
+            //putte paranteser på.
             CreateEventCommand = new RelayCommand(evHandler.CreateEvent, null);
 
             this.eventCatalogSingleton = EventCatalogSingleton.Instance;
