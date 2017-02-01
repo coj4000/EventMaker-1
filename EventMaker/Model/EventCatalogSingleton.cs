@@ -4,11 +4,14 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EventMaker.Persistency;
 
 namespace EventMaker.Model
 {
     public class EventCatalogSingleton
     {
+        public PersistencyService ps;
+
         private ObservableCollection<Event> eventCollection;
 
         public ObservableCollection<Event> EventCollection
@@ -34,10 +37,10 @@ namespace EventMaker.Model
 
         private EventCatalogSingleton()
         {
-            Event event1 = new Event(1, "Møde", "Her er der tekst", "Her", new DateTime(2017, 5, 5));
-
+            //Event event1 = new Event(1, "Møde", "Her er der tekst", "Her", new DateTime(2017, 5, 5));
+            ps = new PersistencyService();
             eventCollection = new ObservableCollection<Event>();
-            eventCollection.Add(event1);
+           // eventCollection.Add(event1);
         }
 
         public void AddEvent(Event e)
