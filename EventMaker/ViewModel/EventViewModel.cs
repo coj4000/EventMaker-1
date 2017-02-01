@@ -77,7 +77,7 @@ namespace EventMaker.ViewModel
 
         public eh.EventHandler evHandler { get; set; }
 
-
+        
 
         public EventViewModel()
         {
@@ -94,11 +94,10 @@ namespace EventMaker.ViewModel
             CreateEventCommand = new RelayCommand(evHandler.CreateEvent, null);
 
             EventCatalogSingleton = EventCatalogSingleton.Instance;
+            
         }
 
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        
+       
     }
 }
