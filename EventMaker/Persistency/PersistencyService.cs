@@ -10,6 +10,7 @@ namespace EventMaker.Persistency
 {
     class PersistencyService
     {
+        /*
         public static async void SaveEventAsJsonAsync(ObservableCollection<Event> events)
         {
             
@@ -29,5 +30,6 @@ namespace EventMaker.Persistency
         {
             
         }
+        */
     }
 }
