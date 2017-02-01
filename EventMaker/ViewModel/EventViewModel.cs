@@ -20,6 +20,7 @@ namespace EventMaker.ViewModel
         {
             get { return eventCatalogSingleton; }
             set { eventCatalogSingleton = value; }
+
         }
 
         private int id;
@@ -76,6 +77,8 @@ namespace EventMaker.ViewModel
 
         public eh.EventHandler evHandler { get; set; }
 
+
+
         public EventViewModel()
         {
             DateTime dt = System.DateTime.Now;
@@ -90,8 +93,12 @@ namespace EventMaker.ViewModel
             //putte paranteser på.
             CreateEventCommand = new RelayCommand(evHandler.CreateEvent, null);
 
-            this.eventCatalogSingleton = EventCatalogSingleton.Instance;
-         }
+            EventCatalogSingleton = EventCatalogSingleton.Instance;
+        }
 
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

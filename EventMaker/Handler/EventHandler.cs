@@ -18,10 +18,8 @@ namespace EventMaker.Handler
             this.EventViewModel = eventViewModel;
         }
 
-        
         public void CreateEvent()
         {
-
             Event newEvent = new Event
             (
                 EventViewModel.Id,

@@ -15,7 +15,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="98,65,0,0" TextWrapping="Wrap" Text="Id" VerticalAlignment="Top" Height="44" Width="170" />
-        <TextBox x:Name="TextBoxId" HorizontalAlignment="Left" Margin="98,109,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="53" Width="170"  PlaceholderText="id" DataContext="{Binding Id, Mode=TwoWay}"/>
+        <TextBox x:Name="TextBoxId" HorizontalAlignment="Left" Margin="98,109,0,0" TextWrapping="Wrap" Text="{Binding Id, Mode=TwoWay}" VerticalAlignment="Top" Height="53" Width="170"  PlaceholderText="id"/>
         <DatePicker HorizontalAlignment="Left" Margin="98,349,0,0" VerticalAlignment="Top" DataContext="{Binding Date, Mode=TwoWay}"/>
         <TimePicker HorizontalAlignment="Left" Margin="98,440,0,0" VerticalAlignment="Top" Height="40" Width="296" DataContext="{Binding Time, Mode=TwoWay}"/>
         <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="98,542,0,0" VerticalAlignment="Top" Width="125" Command="{Binding CreateEventCommand}">
@@ -26,11 +26,11 @@
             </Interactivity:Interaction.Behaviors>
         </AppBarButton>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="273,65,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Height="44" Width="183"/>
-        <TextBox x:Name="TextBoxName" HorizontalAlignment="Left" Margin="273,114,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="48" Width="183" PlaceholderText="Name" DataContext="{Binding Name, Mode=TwoWay}"/>
+        <TextBox x:Name="TextBoxName" HorizontalAlignment="Left" Margin="273,114,0,0" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" VerticalAlignment="Top" Height="48" Width="183" PlaceholderText="Name"/>
         <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="98,167,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Height="44" Width="170"/>
-        <TextBox x:Name="TextBoxDiscription" HorizontalAlignment="Left" Margin="98,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="56" Width="170" PlaceholderText="Description" DataContext="{Binding Description, Mode=TwoWay}"/>
+        <TextBox x:Name="TextBoxDiscription" HorizontalAlignment="Left" Margin="98,216,0,0" TextWrapping="Wrap" Text="{Binding Description, Mode=TwoWay}" VerticalAlignment="Top" Height="56" Width="170" PlaceholderText="Description"/>
         <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="273,167,0,0" TextWrapping="Wrap" Text="Place" VerticalAlignment="Top" Height="44" Width="183"/>
-        <TextBox x:Name="TextBoxPlace" HorizontalAlignment="Left" Margin="273,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="56" Width="183" PlaceholderText="Place" DataContext="{Binding Place, Mode=TwoWay}"/>
+        <TextBox x:Name="TextBoxPlace" HorizontalAlignment="Left" Margin="273,216,0,0" TextWrapping="Wrap" Text="{Binding Place, Mode=TwoWay}" VerticalAlignment="Top" Height="56" Width="183" PlaceholderText="Place"/>
 
     </Grid>
 </Page>
