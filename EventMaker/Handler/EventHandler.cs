@@ -18,6 +18,7 @@ namespace EventMaker.Handler
             this.EventViewModel = eventViewModel;
         }
 
+        
         public void CreateEvent()
         {
 

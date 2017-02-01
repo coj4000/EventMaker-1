@@ -35,7 +35,7 @@ namespace EventMaker.Model
 
         public void AddEvent(Event e)
         {
-            eventcollection.Add(e);
+            this.eventcollection.Add(e);
         }
 
     }

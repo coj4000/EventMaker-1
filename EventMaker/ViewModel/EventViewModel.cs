@@ -5,10 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using EventMaker.Converter;
 using EventMaker.Model;
+using EventMaker.Common;
+using System.ComponentModel;
+using eh=EventMaker.Handler;
 
 namespace EventMaker.ViewModel
 {
-    public class EventViewModel
+    public class EventViewModel : INotifyPropertyChanged
     {
         private EventCatalogSingleton eventCatalogSingleton;
 
@@ -52,7 +55,7 @@ namespace EventMaker.ViewModel
 
         private DateTimeOffset _date;
 
-        public DateTimeOffset Date 
+        public DateTimeOffset Date
         {
             get { return _date; }
             set { _date = value; }
@@ -60,22 +63,29 @@ namespace EventMaker.ViewModel
 
         private TimeSpan _time;
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public TimeSpan Time
         {
             get { return _time; }
             set { _time = value; }
         }
 
+        public RelayCommand CreateEventCommand { get; set; }
 
+        public eh.EventHandler evHandler { get; set; }
 
         public EventViewModel()
         {
             DateTime dt = System.DateTime.Now;
-            _date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0,0,0,0, new TimeSpan());
+            _date = new DateTimeOffset(dt.Year, dt.Month, dt.Day, 0, 0, 0, 0, new TimeSpan());
             _time = new TimeSpan(dt.Hour, dt.Minute, dt.Second);
+            evHandler = new Handler.EventHandler(this);
 
+            CreateEventCommand = new RelayCommand(evHandler.CreateEvent, null);
 
-        }
+            this.eventCatalogSingleton = EventCatalogSingleton.Instance;
+         }
 
     }
 }
