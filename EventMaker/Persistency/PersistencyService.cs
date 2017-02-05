@@ -17,12 +17,11 @@ namespace EventMaker.Persistency
 
         private static string eventFileName = "Events.txt";
 
-        public static async void SaveEventsAsJsonAsync(ObservableCollection<Event> events)
+        public async void SaveEventsAsJsonAsync(ObservableCollection<Event> events)
         {
             string eventsJsonString = JsonConvert.SerializeObject(events);
             SerializeEventsFileAsync(eventsJsonString, eventFileName);
         }
-
 
         public static async void SerializeEventsFileAsync(string eventsString, string fileName)
         {
@@ -30,11 +29,13 @@ namespace EventMaker.Persistency
             await FileIO.WriteTextAsync(localFile, eventsString);
         }
 
-        public static async Task<List<Event>> LoadEventsFromJsonAsync()
+        public async Task<List<Event>> LoadEventsFromJsonAsync()
         {
             string eventsJsonString = await DeSerializeEventsFileAsync(eventFileName);
+
             if (eventsJsonString != null)
                 return (List<Event>)JsonConvert.DeserializeObject(eventsJsonString, typeof(List<Event>));
+
             return null;
         }
 
@@ -47,26 +48,10 @@ namespace EventMaker.Persistency
             }
             catch (FileNotFoundException ex)
             {
-
-               // MessageDialogHelper.Show("File of Events not found! - Loading for the first time? \n File not found!", ex.Message);
+                //MessageDialogHelper.Show("File of Events not found! - Loading for the first time? \n File not found!", ex.Message);
                 return null;
             }
         }
-        /*
-        public static async Task<List<Event>> LoadEventsFromJsonAsync()
-        {
-            
-        }
-
-        public static async void SerializeEventsFileAsync(string eventsString, string fileName)
-        {
-            
-        }
-
-        public static async Task<string> DeSerializeEventFileAsync(string fileName)
-        {
-            
-        }
-        */
+       
     }
 }

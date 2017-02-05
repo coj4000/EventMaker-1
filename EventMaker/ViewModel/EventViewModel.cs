@@ -77,8 +77,6 @@ namespace EventMaker.ViewModel
 
         public eh.EventHandler evHandler { get; set; }
 
-        
-
         public EventViewModel()
         {
             DateTime dt = System.DateTime.Now;
@@ -95,9 +93,6 @@ namespace EventMaker.ViewModel
 
             EventCatalogSingleton = EventCatalogSingleton.Instance;
             
-        }
-
-        
-       
+        }  
     }
 }

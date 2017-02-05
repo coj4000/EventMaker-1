@@ -37,15 +37,33 @@ namespace EventMaker.Model
 
         private EventCatalogSingleton()
         {
-            //Event event1 = new Event(1, "Møde", "Her er der tekst", "Her", new DateTime(2017, 5, 5));
             ps = new PersistencyService();
             eventCollection = new ObservableCollection<Event>();
-           // eventCollection.Add(event1);
+            FetchEvents();
         }
 
         public void AddEvent(Event e)
         {
             this.eventCollection.Add(e);
         }
+
+        private async void FetchEvents()
+        {
+            var events = await ps.LoadEventsFromJsonAsync();
+
+            if (events != null)
+            {
+                foreach (var item in events)
+                {
+                    eventCollection.Add(item);
+                }
+            }
+            else
+            {
+                eventCollection = new ObservableCollection<Event>();
+                ps.SaveEventsAsJsonAsync(eventCollection);
+            }
+        }
     }
 }
+
