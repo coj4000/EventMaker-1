@@ -14,6 +14,7 @@ namespace EventMaker.ViewModel
 {
     public class EventViewModel : INotifyPropertyChanged
     {
+        #region Properties
         private EventCatalogSingleton eventCatalogSingleton;
 
         public EventCatalogSingleton EventCatalogSingleton
@@ -22,6 +23,22 @@ namespace EventMaker.ViewModel
             set { eventCatalogSingleton = value; }
 
         }
+
+        private Event selectedEvent;
+
+        public Event SelectedEvent
+        {
+            get
+            { return selectedEvent; }
+            set
+            {
+                isEventSelected = true;
+                selectedEvent = value;
+                OnPropertyChanged(nameof(SelectedEvent));
+            }
+        }
+
+        public bool isEventSelected;
 
         private int id;
 
@@ -74,8 +91,10 @@ namespace EventMaker.ViewModel
         }
 
         public ICommand CreateEventCommand { get; set; }
+        public ICommand RemoveEventCommand { get; set; }
 
         public eh.EventHandler evHandler { get; set; }
+        #endregion
 
         public EventViewModel()
         {
@@ -90,9 +109,21 @@ namespace EventMaker.ViewModel
             //når man sender en delegate med (CreateEvent) skal man ikke
             //putte paranteser på.
             CreateEventCommand = new RelayCommand(evHandler.CreateEvent, null);
+            RemoveEventCommand = new RelayCommand(evHandler.RemoveEvent, CheckEventSelected);
 
             EventCatalogSingleton = EventCatalogSingleton.Instance;
+        }
             
-        }  
+        #region Methods
+        private bool CheckEventSelected()
+        {
+            return isEventSelected;
+        }
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion
     }
 }

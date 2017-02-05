@@ -10,6 +10,7 @@ namespace EventMaker.Model
 {
     public class EventCatalogSingleton
     {
+        #region Properties
         public PersistencyService ps;
 
         private ObservableCollection<Event> eventCollection;
@@ -34,6 +35,7 @@ namespace EventMaker.Model
                 return instance;
             }
         }
+        #endregion
 
         private EventCatalogSingleton()
         {
@@ -41,7 +43,8 @@ namespace EventMaker.Model
             eventCollection = new ObservableCollection<Event>();
             FetchEvents();
         }
-
+        
+        #region Methods
         public void AddEvent(Event e)
         {
             this.eventCollection.Add(e);
@@ -64,6 +67,13 @@ namespace EventMaker.Model
                 ps.SaveEventsAsJsonAsync(eventCollection);
             }
         }
+
+        private async void RemoveEvent(Event e)
+        {
+            eventCollection.Remove(e);
+            ps.SaveEventsAsJsonAsync(eventCollection);
+        }
+        #endregion
     }
 }
 

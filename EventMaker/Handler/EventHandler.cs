@@ -12,6 +12,7 @@ namespace EventMaker.Handler
 {
     public class EventHandler
     {
+        #region Properties
         private EventViewModel EventViewModel;
 
         public PersistencyService ps;
@@ -21,6 +22,7 @@ namespace EventMaker.Handler
             this.EventViewModel = eventViewModel;
             ps = new PersistencyService();
         }
+        #endregion
 
         public void CreateEvent()
         {
@@ -34,8 +36,20 @@ namespace EventMaker.Handler
             );
 
             EventViewModel.EventCatalogSingleton.AddEvent(newEvent);
+            StoreJsonList();
+         }
 
+        #region Methods
+        public void RemoveEvent()
+        {
+            EventCatalogSingleton.Instance.EventCollection.Remove(EventViewModel.SelectedEvent);
+            StoreJsonList();
+        }
+
+        public void StoreJsonList()
+        {
             ps.SaveEventsAsJsonAsync(EventCatalogSingleton.Instance.EventCollection);
         }
+        #endregion
     }
 }

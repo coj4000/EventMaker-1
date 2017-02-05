@@ -16,35 +16,35 @@
 
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        
-        
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="751" Margin="91,78,0,0" VerticalAlignment="Top" Width="410" ItemsSource="{Binding EventCatalogSingleton.EventCollection}">
+
+
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="751" Margin="91,78,0,0" VerticalAlignment="Top" Width="410" ItemsSource="{Binding EventCatalogSingleton.EventCollection}" SelectedItem="{Binding SelectedEvent, Mode=TwoWay}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                <Border Name="border" BorderBrush="Black" BorderThickness="1"
+                    <Border Name="border" BorderBrush="Black" BorderThickness="1"
           Padding="5" Margin="5">
-                    <Grid Height="110" Width="271">
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
+                        <Grid Height="110" Width="271">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Event Id:"/>
-                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Id}" />
-                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Event Name:"/>
-                        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Name}" />
-                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Description:"/>
-                        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Description}"/>
-                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Place:"/>
-                        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Place}"/>
-                    </Grid>
-                </Border>
-            </DataTemplate>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Event Id:"/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Id}" />
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Event Name:"/>
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Name}" />
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Description:"/>
+                            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Description}"/>
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="Place:"/>
+                            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Place}"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
         <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="Ny Event" Margin="545,585,0,0" VerticalAlignment="Top" Width="309" Height="172" FontSize="30" Background="#FF5E834F">
@@ -54,5 +54,8 @@
                 </Core:EventTriggerBehavior>
             </Interactivity:Interaction.Behaviors>
         </AppBarButton>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="545,79,0,0" TextWrapping="Wrap" Text="{Binding SelectedEvent}" VerticalAlignment="Top" Height="149" Width="309"/>
+
+        <AppBarButton x:Name="appBarButton1" HorizontalAlignment="Left" Icon="Accept" Label="Slet Event" Margin="545,269,0,0" VerticalAlignment="Top" Width="309" Background="#FFF14343" Command="{Binding RemoveEventCommand, Mode=TwoWay}"/>
     </Grid>
 </Page>

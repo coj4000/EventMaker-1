@@ -11,21 +11,25 @@ namespace EventMaker.Common
 {
     public class RelayCommand : ICommand
     {
+        #region Properties
         private Action methodToExecute = null;
         private Func<bool> methodToDetectCanExecute = null;
         private DispatcherTimer canExecuteChangedEventTimer = null;
+        public event EventHandler CanExecuteChanged;
+        #endregion
 
         public RelayCommand(Action methodToExecute, Func<bool> methodToDetectCanExecute)
         {
             this.methodToExecute = methodToExecute;
             this.methodToDetectCanExecute = methodToDetectCanExecute;
-
+                    
             this.canExecuteChangedEventTimer = new DispatcherTimer();
             this.canExecuteChangedEventTimer.Tick += canExecuteChangedEventTimer_Tick;
             this.canExecuteChangedEventTimer.Interval = new TimeSpan(0, 0, 1);
             this.canExecuteChangedEventTimer.Start();
         }
 
+        #region Methods
         public void Execute(object parameter)
         {
             this.methodToExecute();
@@ -33,17 +37,8 @@ namespace EventMaker.Common
 
         public bool CanExecute(object parameter)
         {
-            if (this.methodToDetectCanExecute == null)
-            {
-                return true;
-            }
-            else
-            {
-                return this.methodToDetectCanExecute();
-            }
+            return methodToDetectCanExecute == null ? true : methodToDetectCanExecute();
         }
-
-        public event EventHandler CanExecuteChanged;
 
         void canExecuteChangedEventTimer_Tick(object sender, object e)
         {
@@ -52,5 +47,6 @@ namespace EventMaker.Common
                 this.CanExecuteChanged(this, EventArgs.Empty);
             }
         }
+        #endregion
     }
 }
